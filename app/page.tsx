@@ -1,11 +1,54 @@
-import Navbar from "./components/Navbar"; 
+// import Card from "./components/card/Card";
+// import Navbar from "./components/Navbar"; 
 
-export default function Home() {
-  return (
-    <div>
+// export default function Home() {
+//   return (
+//     <div>
       
-      <h1>Home Page</h1>
-      <Navbar />
+//       <h1>Home Page</h1>
+//      <Card className="p-6 bg-green-200" name="Bilal"rollNumber={101}age={19}day="Tuesday"/><br/>
+//      <Card name="Subhan"rollNumber={102}age={18}day="Monday"/><br/>
+//      <Card name="Malik"rollNumber={103}age={20}day="Friday"/><br/>
+//       <Navbar />
+//     </div>
+//   );
+// }
+import Navbar from './components/Navbar';
+import React from 'react';
+import Card from './components/card/Card';
+
+// Define the interface for the student data
+interface StudentData {
+  name: string;
+  age: number;
+  rollNumber: string;
+  className: string;
+}
+
+const Home = () => {
+  const students: StudentData[] = [
+    { name: 'Alice Smith', age: 15, rollNumber: '001', className: '10-A' },
+    { name: 'Bob Johnson', age: 16, rollNumber: '002', className: '10-B' },
+    { name: 'Charlie Brown', age: 15, rollNumber: '003', className: '10-C' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
+      <h1 className="text-3xl font-bold my-8">Student ID Cards</h1>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {students.map((student, index) => (
+          <Card
+            key={index}
+            name={student.name}
+            age={student.age}
+            rollNumber={student.rollNumber}
+            className={student.className}
+          />
+        ))}
+        <Navbar/>
+      </div>
     </div>
   );
 }
+
+export default Home;
