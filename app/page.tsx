@@ -13,42 +13,54 @@
 //     </div>
 //   );
 // }
-import Navbar from './components/Navbar';
-import React from 'react';
-import Card from './components/card/Card';
+// import Navbar from './components/Navbar';
+// import React from 'react';
+// import Card from './components/card/Card';
 
-// Define the interface for the student data
-interface StudentData {
-  name: string;
-  age: number;
-  rollNumber: string;
-  className: string;
-}
+// // Define the interface for the student data
+// interface StudentData {
+//   name: string;
+//   age: number;
+//   rollNumber: string;
+//   day: string;
+// }
 
-const Home = () => {
-  const students: StudentData[] = [
-    { name: 'Alice Smith', age: 15, rollNumber: '001', className: '10-A' },
-    { name: 'Bob Johnson', age: 16, rollNumber: '002', className: '10-B' },
-    { name: 'Charlie Brown', age: 15, rollNumber: '003', className: '10-C' },
-  ];
+// const Home = () => {
+//   const students: StudentData[] = [
+//     { name: 'Alice Smith', age: 15, rollNumber: '001', day: 'Monday' },
+//     { name: 'Bob Johnson', age: 16, rollNumber: '002', day: 'Tuesday' },
+//     { name: 'Charlie Brown', age: 15, rollNumber: '003', day: 'Friday' },
+//   ];
 
-  return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      <h1 className="text-3xl font-bold my-8">Student ID Cards</h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {students.map((student, index) => (
-          <Card
-            key={index}
-            name={student.name}
-            age={student.age}
-            rollNumber={student.rollNumber}
-            className={student.className}
-          />
-        ))}
-        <Navbar/>
-      </div>
+//   return (
+//     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
+//         <Navbar/>
+//       <h1 className="text-3xl font-bold my-8">Student ID Cards</h1>
+//       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+//         {students.map((student, index) => (
+//           <Card
+//             key={index}
+//             name={student.name}
+//             age={student.age}
+//             rollNumber={student.rollNumber}
+//             day={student.day}
+//           />
+//         ))}
+      
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Home;
+// Portfolio Practice
+import Image from "next/image";
+import Hero from "./components/Hero";
+export default function HomePage() {
+  return (<div>
+      
+      <Hero />
     </div>
   );
 }
 
-export default Home;
